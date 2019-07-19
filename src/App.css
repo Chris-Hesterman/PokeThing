@@ -1,0 +1,12 @@
+.App {
+    font-family: Arial, sans-serif;
+    text-align: center; 
+}
+
+.App h1 {
+    color: green;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    text-shadow: 1px 1px black;
+}

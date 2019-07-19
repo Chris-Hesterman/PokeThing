@@ -1,0 +1,32 @@
+
+.Pokedex {
+    display: flex;
+    flex-direction: row;
+    font-family: arial, sans-serif;
+    justify-content: space-around;
+}
+
+.Pokedex-winner {
+    background: #333;
+    border: 1px solid lime;
+    border-radius: 25px;
+    color: lime;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;  
+}
+
+.Pokedex-loser {
+    color: red;
+}
+
+@media (max-width: 720px) {
+    .Pokedex {
+        justify-content: space-between;
+    }  
+    .Pokedex-winner {
+        width: 100%;
+    }
+}
+
+

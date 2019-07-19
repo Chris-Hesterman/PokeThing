@@ -1,0 +1,16 @@
+.Pokegame {
+   width: 90%;
+   margin-right: auto;
+   margin-left: auto;
+}
+
+.Pokegame h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media (max-width: 720px) {
+    .Pokegame {
+        width:100%;
+    }
+}
