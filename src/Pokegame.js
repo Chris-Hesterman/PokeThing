@@ -1,35 +1,60 @@
 import React, { Component } from 'react';
 import Pokedex from './Pokedex';
-import { index } from './helper';
+import { getIds, shuffle } from './helpers';
 import './Pokegame.css';
 
 class Pokegame extends Component {  
-    static defaultProps = {
-        pokes: [
-            {id: 4, name: 'Charmander', type: 'fire', base_experience: 62},
-            {id: 7, name: 'Squirtle', type: 'water', base_experience: 63},
-            {id: 11, name: 'Metapod', type: 'bug', base_experience: 72},
-            {id: 12, name: 'Butterfree', type: 'flying', base_experience: 178},
-            {id: 25, name: 'Pikachu', type: 'electric', base_experience: 112},
-            {id: 39, name: 'Jigglypuff', type: 'normal', base_experience: 95},
-            {id: 94, name: 'Gengar', type: 'poison', base_experience: 225},
-            {id: 133, name: 'Eevee', type: 'normal', base_experience: 65}
-        ]
+    constructor(props) {
+        super(props);
+        this.state = {
+            pokes: [
+                {id: 718, name: "zygarde", exp: 270, type: "ground"},
+                {id: 691, name: "dragalge", exp: 173, type: "dragon"},
+                {id: 582, name: "vanillite", exp: 61, type: "ice"},
+                {id: 509, name: "purrloin", exp: 56, type: "dark"},
+                {id: 745, name: "lycanroc-midday", exp: 170, type: "rock"},
+                {id: 698, name: "amaura", exp: 72, type: "ice"},
+                {id: 352, name: "kecleon", exp: 154, type: "normal"},
+                {id: 302, name: "sableye", exp: 133, type: "ghost"}
+            ]
+        }
+        this.fetchPokes = this.fetchPokes.bind(this);
     }
+
+    async fetchPokes() {
+        let baseUrl = "https://pokeapi.co/api/v2/pokemon/";
+        let pokeIds = getIds();
+        let pokes = await Promise.all(
+            pokeIds.map(id => {
+                return fetch(`${baseUrl}${id}`).then(results => results.json());
+            })
+        );
+        let pokeStats = pokes.map(pokeObj => {  
+            let poke = {
+                id: pokeObj.id,
+                name: pokeObj.name,
+                exp: pokeObj.base_experience,
+                type: pokeObj.types[0].type.name
+            };
+            return poke;
+        });
+        this.setState({ pokes: pokeStats });
+    }
+
     render() {
-        const pokeArr= index();
-        const playerOne = pokeArr.slice(0,4);
-        const playerTwo = pokeArr.slice(4);
-        const handOne = playerOne.map(index => this.props.pokes[index]);
-        const handTwo = playerTwo.map(index => this.props.pokes[index]);
-        const totalOne = handOne.reduce((acc, next) => {
-                        return acc + next.base_experience;
+        const order = shuffle();
+        const pokes = order.map(index => this.state.pokes[index]);
+        const handOne = pokes.slice(0,4);
+        const handTwo = pokes.slice(4);
+        const totalOne = handOne.reduce((acc, val) => {
+                        return acc + val.exp;
                         }, 0);
-        const totalTwo = handTwo.reduce((acc, next) => {
-                        return acc + next.base_experience;
+        const totalTwo = handTwo.reduce((acc, val) => {
+                        return acc + val.exp;
                         }, 0);
         return (       
             <div className="Pokegame">
+                <button onClick={this.fetchPokes}>Shuffle Again!</button>
                 <h2>Player 1   Score: { totalOne }</h2>
                 <Pokedex key="pOne" hand={ handOne } total={ totalOne } isWinner={ totalOne > totalTwo } />    
                 <h2>Player 2   Score: { totalTwo }</h2>

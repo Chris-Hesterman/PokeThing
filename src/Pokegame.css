@@ -9,6 +9,23 @@
     margin-bottom: 0;
 }
 
+.Pokegame button {
+    height: 2rem;
+    width: 8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px #999;
+    outline: none;
+    border: none;
+    background: lightgreen;
+}
+.Pokegame button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 1px #777;
+}
+
 @media (max-width: 720px) {
     .Pokegame {
         width:100%;
