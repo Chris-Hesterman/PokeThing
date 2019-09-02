@@ -9,11 +9,54 @@
     text-align: center;
     transition: all .6s;
     width: 15%;
+    animation: fadeIn .7s ease-in both;
 }
 
-.Pokecard:hover {
-    transform: scale(1.1) rotateZ(4deg);
+.Pokecard-deal {
+    box-shadow: 5px 5px 5px #444;
+    background: #C6FFDD;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+    background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: all .6s;
+    width: 15%;
+    animation: fadeOut 1.4s ease-in-out both;
 }
+.Pokecard:hover {
+    background: lime;  
+}
+.Pokecard-deal:hover {
+    background: lime;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(.01);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotateZ(720deg);
+    }
+ }
+
+ @keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(.1) rotateZ(720deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotateZ(1440deg);
+    }
+ }
 
 .Pokecard-img {
     background: #444444;

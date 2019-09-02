@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Pokedex from './Pokedex';
-import { getIds, shuffle } from './helpers';
+import { shuffle, getIds } from './helpers';
+import { fetchPokes } from './getPokes';
 import './Pokegame.css';
 
 class Pokegame extends Component {  
@@ -16,29 +17,14 @@ class Pokegame extends Component {
                 {id: 698, name: "amaura", exp: 72, type: "ice"},
                 {id: 352, name: "kecleon", exp: 154, type: "normal"},
                 {id: 302, name: "sableye", exp: 133, type: "ghost"}
-            ]
+            ],
+            className: 'Pokecard'  
         }
-        this.fetchPokes = this.fetchPokes.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    async fetchPokes() {
-        let baseUrl = "https://pokeapi.co/api/v2/pokemon/";
-        let pokeIds = getIds();
-        let pokes = await Promise.all(
-            pokeIds.map(id => {
-                return fetch(`${baseUrl}${id}`).then(results => results.json());
-            })
-        );
-        let pokeStats = pokes.map(pokeObj => {  
-            let poke = {
-                id: pokeObj.id,
-                name: pokeObj.name,
-                exp: pokeObj.base_experience,
-                type: pokeObj.types[0].type.name
-            };
-            return poke;
-        });
-        this.setState({ pokes: pokeStats });
+    handleClick(e) {
+        fetchPokes().then(results => this.setState({ pokes: results, className: 'Pokecard-deal' }));   
     }
 
     render() {
@@ -47,18 +33,18 @@ class Pokegame extends Component {
         const handOne = pokes.slice(0,4);
         const handTwo = pokes.slice(4);
         const totalOne = handOne.reduce((acc, val) => {
-                        return acc + val.exp;
+                        return acc + val.exp; 
                         }, 0);
         const totalTwo = handTwo.reduce((acc, val) => {
                         return acc + val.exp;
                         }, 0);
         return (       
             <div className="Pokegame">
-                <button onClick={this.fetchPokes}>Shuffle Again!</button>
+                <button onClick={ this.handleClick }>Shuffle Again!</button>
                 <h2>Player 1   Score: { totalOne }</h2>
-                <Pokedex key="pOne" hand={ handOne } total={ totalOne } isWinner={ totalOne > totalTwo } />    
+                <Pokedex key="pOne" hand={ handOne } total={ totalOne } cardClass={ this.state.className } isWinner={ totalOne > totalTwo } />    
                 <h2>Player 2   Score: { totalTwo }</h2>
-                <Pokedex key="pTwo" hand={ handTwo } total={ totalTwo } isWinner={ totalTwo > totalOne } />
+                <Pokedex key="pTwo" hand={ handTwo } total={ totalTwo } cardClass={ this.state.className } isWinner={ totalTwo > totalOne } />
             </div>
         );
     }

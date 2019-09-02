@@ -7,7 +7,7 @@ class Pokecard extends Component {
         const id = poke.id.toString().padStart(3, "0") 
         const url = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${ id }.png`   
         return (
-            <div className="Pokecard">
+            <div className={ this.props.cardClass }>
               <img className="Pokecard-img" src={ url } alt={ poke.name }/> 
               <div className="Pokecard-stats">
                 <h2><strong>{ poke.name }</strong></h2>

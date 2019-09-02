@@ -6,6 +6,7 @@ class Pokedex extends Component {
     render() {
         const hand = this.props.hand;
         const isWinner = this.props.isWinner;  
+        
         return (
             <div>
                 { isWinner ? 
@@ -13,7 +14,7 @@ class Pokedex extends Component {
                     <h2 className="Pokedex-loser">THIS HAND LOSES!</h2> 
                 }
                 <div className="Pokedex">
-                    { hand.map(poke => <Pokecard key={ poke.name } poke={ poke } />) }
+                    { hand.map(poke => <Pokecard key={ poke.name } poke={ poke } cardClass={ this.props.cardClass }/>) }        
                 </div>
             </div>         
         );  
