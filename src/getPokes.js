@@ -20,6 +20,8 @@ async function fetchPokes() {
     return pokeStats;
 }
 
+const pokeStats = fetchPokes();
 
-export { fetchPokes };
+
+export { fetchPokes, pokeStats };
 
