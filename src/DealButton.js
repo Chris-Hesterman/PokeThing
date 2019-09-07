@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+import './Pokecard.css';
 
-class Deal extends Component {
+class DealButton extends Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
     }
     
-    handleClick(e) {
-        this.setState({ clicked: true });
+    handleClick(e) {   
         this.props.pokeGen(this.props.newPokes);
     }
 
@@ -20,4 +20,4 @@ class Deal extends Component {
     }
 }
 
-export { Deal } 
+export { DealButton } 

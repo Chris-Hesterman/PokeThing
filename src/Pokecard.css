@@ -23,7 +23,7 @@
     text-align: center;
     transition: all .6s;
     width: 15%;
-    animation: fadeOut 1.4s ease-in-out both;
+    animation: fadeOut 1s ease-out both;
 }
 .Pokecard:hover {
     background: lime;  
@@ -35,7 +35,7 @@
 @keyframes fadeIn {
     0% {
         opacity: 0;
-        transform: scale(.01);
+        transform: scale(.01) rotateZ(0deg);
     }
     100% {
         opacity: 1;
@@ -58,12 +58,19 @@
     }
  }
 
+ @keyframes spin {
+     100% {
+         transform: rotateY(-2880deg) rotateZ(1440deg);
+     }
+ }
+
 .Pokecard-img {
     background: #444444;
     margin-top: 5%;
     width: 90%;
     border: 1px solid black;
     border-radius: 5px; 
+    animation: spin .7s linear both;
 }
 
 .Pokecard-stats {
