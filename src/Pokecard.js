@@ -12,7 +12,7 @@ class Pokecard extends Component {
               <div className="Pokecard-stats">
                 <h2><strong>{ poke.name }</strong></h2>
                 <p><strong>Type:</strong> { poke.type }</p>  
-                <p><strong>   Experience:</strong> { poke.exp }</p>
+                <p><strong>Experience:</strong> { poke.exp }</p>
               </div>  
             </div>
         );

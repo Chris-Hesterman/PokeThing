@@ -27,15 +27,6 @@
     width: 90%; 
 }
 
-/* @keyframes score {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-} */
-
 @media (max-width: 720px) {
     .Pokedex {
         justify-content: space-between;

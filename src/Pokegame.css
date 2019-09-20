@@ -4,10 +4,15 @@
    margin-left: auto;
 }
 
-.Pokegame h2 {
+.Pokegame-scores {
     margin-top: 0;
     margin-bottom: 0;
-    animation: fadeIn2 1.4s ease-in both;
+    animation: fadeIn2 .7s ease-in both;
+}
+.Pokegame-scores2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    animation: ham 5s ease-in both;
 }
 
 @keyframes fadeIn2 {
@@ -16,6 +21,17 @@
     }
     100% {
         opacity: 1;
+    }
+}
+@keyframes ham {
+    0% {
+        opacity: (0);
+    }
+    50% {
+        opacity: (1);
+    }
+    100% {
+        opacity: (0);
     }
 }
 

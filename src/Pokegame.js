@@ -3,7 +3,6 @@ import Pokedex from './Pokedex';
 import { fetchPokes } from './getPokes';
 import { shuffle } from './helpers';
 import { DealButton } from './DealButton';
-import './Pokecard.css';
 import './Pokegame.css';
 
 class Pokegame extends Component {  
@@ -25,7 +24,9 @@ class Pokegame extends Component {
         this.handlePokes = this.handlePokes.bind(this);
     }
     
-    handlePokes(pokes) {   
+    handlePokes(pokes) {  
+        let readout = document.querySelector('.Pokegame-scores');
+
         pokes.then(results => {
             this.setState({ pokes: results, className: 'Pokecard-deal' });
         }); 
@@ -46,10 +47,13 @@ class Pokegame extends Component {
         return (       
             <div className="Pokegame">
                 <DealButton pokeGen={ this.handlePokes } newPokes={ nextPokes } />
-                <h2>Player 1   Score: { totalOne }</h2>
-                <Pokedex key="pOne" hand={ handOne } total={ totalOne } cardClass={ this.state.className } isWinner={ totalOne > totalTwo } />    
-                <h2>Player 2   Score: { totalTwo }</h2>
-                <Pokedex key="pTwo" hand={ handTwo } total={ totalTwo } cardClass={ this.state.className } isWinner={ totalTwo > totalOne } />
+                <div className="Pokegame-scores">
+                    <h2>Player 1   Score: { totalOne }</h2>
+                    <Pokedex key="pOne" hand={ handOne } total={ totalOne } cardClass={ this.state.className } isWinner={ totalOne > totalTwo } />    
+                    <h2>Player 2   Score: { totalTwo }</h2>
+                    <Pokedex key="pTwo" hand={ handTwo } total={ totalTwo } cardClass={ this.state.className } isWinner={ totalTwo > totalOne } />
+                </div>
+                
             </div>
         );
     }
