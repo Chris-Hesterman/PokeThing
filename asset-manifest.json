@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/PokeThing/static/css/main.44330bb6.chunk.css",
+    "main.js": "/PokeThing/static/js/main.53917a07.chunk.js",
+    "main.js.map": "/PokeThing/static/js/main.53917a07.chunk.js.map",
+    "runtime~main.js": "/PokeThing/static/js/runtime~main.a32dd4dd.js",
+    "runtime~main.js.map": "/PokeThing/static/js/runtime~main.a32dd4dd.js.map",
+    "static/js/2.623b8547.chunk.js": "/PokeThing/static/js/2.623b8547.chunk.js",
+    "static/js/2.623b8547.chunk.js.map": "/PokeThing/static/js/2.623b8547.chunk.js.map",
+    "index.html": "/PokeThing/index.html",
+    "precache-manifest.3fbf03b5df56c884a09ff8e62dd2a0b8.js": "/PokeThing/precache-manifest.3fbf03b5df56c884a09ff8e62dd2a0b8.js",
+    "service-worker.js": "/PokeThing/service-worker.js",
+    "static/css/main.44330bb6.chunk.css.map": "/PokeThing/static/css/main.44330bb6.chunk.css.map"
+  }
+}
