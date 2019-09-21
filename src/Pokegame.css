@@ -1,18 +1,22 @@
 .Pokegame {
-   width: 90%;
+   max-width: 80%;
    margin-right: auto;
    margin-left: auto;
 }
 
 .Pokegame-scores {
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: 0;
     animation: fadeIn2 .7s ease-in both;
 }
-.Pokegame-scores2 {
-    margin-top: 0;
+
+.Pokegame-scores h2 {
     margin-bottom: 0;
-    animation: ham 5s ease-in both;
+    margin-top: 0;
+}
+
+.Pokedex:first-of-type {
+    margin-bottom: 15px;
 }
 
 @keyframes fadeIn2 {
@@ -23,7 +27,7 @@
         opacity: 1;
     }
 }
-@keyframes ham {
+@keyframes fadeIn1 {
     0% {
         opacity: (0);
     }
@@ -40,7 +44,7 @@
     width: 8rem;
     font-size: 1rem;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     border-radius: 5px;
     box-shadow: 3px 3px 2px #999;
     outline: none;

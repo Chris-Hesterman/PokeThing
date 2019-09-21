@@ -7,24 +7,42 @@
     justify-content: space-around;
 }
 
-.Pokedex-winner {
+h2.Pokedex-winner {
     background: #333;
     border: 1px solid lime;
     border-radius: 25px;
     color: lime;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0;
     width: 90%; 
 }
 
-.Pokedex-loser {
+h2.Pokedex-loser {
     background: #333;
     border: 1px solid red;
     border-radius: 25px;
     color: red;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0;
     width: 90%; 
+}
+
+.Pokedex-score-fade {
+    animation: fixPokeFade 1.4s ease-in-out 1;
+}
+
+@keyframes fixPokeFade {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 720px) {

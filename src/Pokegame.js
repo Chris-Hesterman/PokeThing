@@ -19,17 +19,16 @@ class Pokegame extends Component {
                 {id: 352, name: "kecleon", exp: 154, type: "normal"},
                 {id: 302, name: "sableye", exp: 133, type: "ghost"}
             ],
-            className: 'Pokecard'
+            className: 'Pokecard',
+            clicked: false
         }
         this.handlePokes = this.handlePokes.bind(this);
     }
     
     handlePokes(pokes) {  
-        let readout = document.querySelector('.Pokegame-scores');
-
         pokes.then(results => {
-            this.setState({ pokes: results, className: 'Pokecard-deal' });
-        }); 
+            this.setState({ pokes: results, className: 'Pokecard-deal', clicked: true });
+        });    
     }     
 
     render() {

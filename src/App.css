@@ -1,7 +1,7 @@
 .App {
     font-family: Arial, sans-serif;
-    text-align: center; 
-    overflow-y: hidden;
+    text-align: center;
+    margin-bottom: 0;
 }
 
 .App h1 {

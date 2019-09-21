@@ -5,7 +5,8 @@ import './Pokedex.css';
 class Pokedex extends Component { 
     render() {
         const hand = this.props.hand;
-        const isWinner = this.props.isWinner;  
+        const isWinner = this.props.isWinner; 
+
         
         return (
             <div>
