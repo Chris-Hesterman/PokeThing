@@ -93,8 +93,9 @@
     .Pokecard-stats h2 {
         font-size: 18px;
     }
-    .Pokecard {
-        width: 20%;
+    .Pokecard,
+    .Pokecard-deal {
+        width: 22%;
     }
 }
 
