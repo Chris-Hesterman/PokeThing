@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/PokeThing/static/css/main.44330bb6.chunk.css",
+    "main.css": "/PokeThing/static/css/main.f00fee8f.chunk.css",
     "main.js": "/PokeThing/static/js/main.53917a07.chunk.js",
     "main.js.map": "/PokeThing/static/js/main.53917a07.chunk.js.map",
     "runtime~main.js": "/PokeThing/static/js/runtime~main.a32dd4dd.js",
@@ -8,8 +8,8 @@
     "static/js/2.623b8547.chunk.js": "/PokeThing/static/js/2.623b8547.chunk.js",
     "static/js/2.623b8547.chunk.js.map": "/PokeThing/static/js/2.623b8547.chunk.js.map",
     "index.html": "/PokeThing/index.html",
-    "precache-manifest.cff307863e55f9df178b08ba508d1834.js": "/PokeThing/precache-manifest.cff307863e55f9df178b08ba508d1834.js",
+    "precache-manifest.78e8e5bbe510b9b8a7e55be0bf67d759.js": "/PokeThing/precache-manifest.78e8e5bbe510b9b8a7e55be0bf67d759.js",
     "service-worker.js": "/PokeThing/service-worker.js",
-    "static/css/main.44330bb6.chunk.css.map": "/PokeThing/static/css/main.44330bb6.chunk.css.map"
+    "static/css/main.f00fee8f.chunk.css.map": "/PokeThing/static/css/main.f00fee8f.chunk.css.map"
   }
 }
