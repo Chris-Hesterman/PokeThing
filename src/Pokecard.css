@@ -85,7 +85,7 @@
 .Pokecard-stats h2 {
     margin-top: 10px;
     margin-bottom: 5px;
-    color: lime;
+    color: lightgreen;
     text-shadow: 1px 1px 2px black;
 }
 
@@ -102,6 +102,9 @@
 @media (max-width: 980px) {
     .Pokecard-stats p {
         font-size: .7rem;
+    }
+    .Pokecard-stats h2 {
+        color: whitesmoke;
     }
 }
 
